@@ -15,16 +15,15 @@ class Section extends React.Component {
     }));
   };
   handlNeutral = () => {
-    console.log('Neutral');
     this.setState(prevState => ({
       valueNeutral: prevState.valueNeutral + 1,
     }));
   };
   handlBad = () => {
-    console.log('Bad');
-       this.setState(prevState => ({
-         valueBad: prevState.valueBad + 1,
-       }));
+    console.log("bad");
+    this.setState(prevState => ({
+      valueBad: prevState.valueBad + 1,
+    }));
   };
 
   render() {

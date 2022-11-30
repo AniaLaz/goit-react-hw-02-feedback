@@ -15,11 +15,16 @@ const StatisticsItem = ({ valueGood, valueNeutral, valueBad }) => {
       </li>
       <li>
         Total:
-        <span>0</span>
+        <span>{valueGood + valueNeutral + valueBad}</span>
       </li>
       <li>
         Positsve feetback:
-        <span>0%</span>
+        <span>
+          {Math.round(
+            (valueGood * 100) / (valueGood + valueNeutral + valueBad)
+          )}
+          %
+        </span>
       </li>
     </>
   );

@@ -5,11 +5,13 @@ const Statistics = ({ valueGood, valueNeutral, valueBad }) => {
     <div>
       <h2>Statistics</h2>
       <ul>
-        <StatisticsItem
-          valueGood={valueGood}
-          valueNeutral={valueNeutral}
-          valueBad={valueBad}
-        />
+        {(valueGood === 0) & (valueNeutral === 0) & (valueBad ===0) ?<div>No feedback given</div> : (
+          <StatisticsItem
+            valueGood={valueGood}
+            valueNeutral={valueNeutral}
+            valueBad={valueBad}
+          />
+        )}
       </ul>
     </div>
   );
