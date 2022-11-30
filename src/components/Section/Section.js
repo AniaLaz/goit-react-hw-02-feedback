@@ -1,6 +1,7 @@
 import React from 'react';
 import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
 import Statistics from '../Statistics/Statistics';
+import css from 'components/Section/Section.module.css';
 
 class Section extends React.Component {
   state = {
@@ -20,15 +21,14 @@ class Section extends React.Component {
     }));
   };
   handlBad = () => {
-    console.log("bad");
-    this.setState(prevState => ({
+      this.setState(prevState => ({
       valueBad: prevState.valueBad + 1,
     }));
   };
 
   render() {
     return (
-      <section className="#">
+      <section className={css.sectionFeedback}>
         <FeedbackOptions
           onGood={this.handlGood}
           onNeutral={this.handlNeutral}
