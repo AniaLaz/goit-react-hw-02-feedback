@@ -3,45 +3,28 @@ import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
 import Statistics from '../Statistics/Statistics';
 import css from 'components/Section/Section.module.css';
 
-class Section extends React.Component {
-  state = {
-    valueGood: 0,
-    valueNeutral: 0,
-    valueBad: 0,
-  };
-
-  handlGood = () => {
-    this.setState(prevState => ({
-      valueGood: prevState.valueGood + 1,
-    }));
-  };
-  handlNeutral = () => {
-    this.setState(prevState => ({
-      valueNeutral: prevState.valueNeutral + 1,
-    }));
-  };
-  handlBad = () => {
-      this.setState(prevState => ({
-      valueBad: prevState.valueBad + 1,
-    }));
-  };
-
-  render() {
-    return (
+const Section = (
+{  handlGood,
+  handlNeutral,
+  handlBad,
+  valueGood,
+  valueNeutral,
+  valueBad,}
+) => {
+  return (
       <section className={css.sectionFeedback}>
         <FeedbackOptions
-          onGood={this.handlGood}
-          onNeutral={this.handlNeutral}
-          onBad={this.handlBad}
+          onGood={handlGood}
+          onNeutral={handlNeutral}
+          onBad={handlBad}
         />
         <Statistics
-          valueGood={this.state.valueGood}
-          valueNeutral={this.state.valueNeutral}
-          valueBad={this.state.valueBad}
+          valueGood={valueGood}
+          valueNeutral={valueNeutral}
+          valueBad={valueBad}
         />
       </section>
     );
-  }
-}
 
+};
 export default Section;
